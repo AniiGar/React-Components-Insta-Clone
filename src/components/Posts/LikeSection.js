@@ -10,6 +10,9 @@ const LikeSection = props => {
   // 🔥 Make sure the parent of LikeSection is passing the right props!
   const { likePost, numberOfLikes } = props;
 
+  // MY NOTES: Logged out props to see what was being passed as props
+  // console.log('LikeSection passed props:', props.post.likes)
+
   return (
     <div>
       <div
@@ -17,13 +20,15 @@ const LikeSection = props => {
         key='likes-icons-container'
       >
         <div className='like-section-wrapper'>
-          <FontAwesomeIcon icon={faHeart} />
+          {/* MY NOTES: Added onClick event handler to heart icon */}
+          <FontAwesomeIcon icon={faHeart} onClick={likePost} />
         </div>
         <div className='like-section-wrapper'>
           <FontAwesomeIcon icon={faComment} />
         </div>
       </div>
-      <p className='like-number'>100 likes</p>
+  {/* MY NOTES: Added props location after logging out passed props*/}
+  <p className='like-number'>{props.post.likes}</p>
     </div>
   );
 };
